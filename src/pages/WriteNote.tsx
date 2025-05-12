@@ -43,7 +43,7 @@ export default function WriteNote() {
         setIsLoading(true)
         try {
             const id = await createNote(formData.text, formData.password)
-            const url = `${location.origin}/note/${id}`
+            const url = `${window.location.origin}${window.location.pathname}#/note/${id}`
             setLink(url)
             setCopyStatus('idle')
         } catch (error) {
